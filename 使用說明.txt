@@ -1,5 +1,8 @@
 
 
+#原程式碼(二列)：用在 R7800 可編譯完成，但 x86_64 會編譯失敗，需增加eSir修正部份
+
+
 1. 複製		← 選擇作業系統（apple or windows）
 2. ctrl + c	← 黑屏處理
 3. cd openwrt && make menuconfig	← Menuconfig 設置  
