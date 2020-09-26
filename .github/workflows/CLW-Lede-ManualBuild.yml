@@ -99,16 +99,18 @@ jobs:
 
     - name: Clone dockerman code
       run: |
-         git clone https://github.com/lisaac/luci-lib-docker.git
-         mv luci-lib-docker/collections/luci-lib-docker openwrt/package/
-         git clone https://github.com/lisaac/luci-app-dockerman.git
-         mv luci-app-dockerman/applications/luci-app-dockerman openwrt/package/
+         #git clone https://github.com/lisaac/luci-lib-docker.git
+         #mv luci-lib-docker/collections/luci-lib-docker openwrt/package/
+         #git clone https://github.com/lisaac/luci-app-dockerman.git
+         #mv luci-app-dockerman/applications/luci-app-dockerman openwrt/package/
+         git clone https://github.com/lisaac/luci-lib-docker.git lede/package/luci-lib-docker
+         git clone https://github.com/lisaac/luci-app-dockerman.git lede/package/luci-app-dockerman
     
-    - name: Fix dockerman code
-      run: |
-        cd openwrt/package/luci-app-dockerman
-        sed -i '17d' Makefile
-        sed -i '16a include $(TOPDIR)/feeds/luci/luci.mk' Makefile
+    #- name: Fix dockerman code
+    #  run: |
+    #    cd openwrt/package/luci-app-dockerman
+    #    sed -i '17d' Makefile
+    #    sed -i '16a include $(TOPDIR)/feeds/luci/luci.mk' Makefile
 
     - name: Update feeds for smartdns
       run: |
